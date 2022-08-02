@@ -5,12 +5,12 @@ site:
 content:
   sources:
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       start_paths:
         - docs/intro
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/fp/*"
         - "!@formulaic/fp/0.2.*"
@@ -24,7 +24,7 @@ content:
         - packages/fp/docs
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/entity-service/*"
         - "!@formulaic/entity-service/0.*"
@@ -35,7 +35,7 @@ content:
         - packages/entity-service/docs
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/hash/*"
         - "!@formulaic/hash/0.2.0"
@@ -44,7 +44,7 @@ content:
         - packages/hash/docs
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/id/*"
         - "!@formulaic/id/0.2.0"
@@ -53,7 +53,7 @@ content:
         - packages/id/docs
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/fp-interceptor/*"
         - "!@formulaic/fp-interceptor/0.2.*"
@@ -65,7 +65,7 @@ content:
         - packages/fp-interceptor/docs
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/acl/*"
         - "!@formulaic/acl/1.0.0"
@@ -73,7 +73,7 @@ content:
         - packages/acl/docs
 
     - url: https://github.com/formulaic-framework/formulaic.git
-      branches: main
+      # branches: main
       tags:
         - "@formulaic/auth-module/*"
         - "!@formulaic/auth-module/0.2.0"
