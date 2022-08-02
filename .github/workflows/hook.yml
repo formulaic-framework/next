@@ -6,4 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/publish
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run publish
+        uses: ./.github/workflows/publish.yml
