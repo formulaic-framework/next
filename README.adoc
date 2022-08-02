@@ -1,0 +1,23 @@
+= Formulaic Doc Playbooks
+
+This repository contains the configuration used to build documentation for the Formulaic framework.
+
+== Local Usage
+
+=== With Local Repositories
+
+```
+sudo docker run --rm -t \
+  -v "$(pwd)/../formulaic":/formulaic:Z \
+  -v "$(pwd)/../example-site-builder":/example-site-builder:Z \
+  -v $(pwd):/antora:Z \
+  ghcr.io/boozallen/sdp-docs/builder:latest generate --stacktrace --generator booz-allen-site-generator --to-dir docs antora-playbook.local.yml
+```
+
+=== Build from GitHub Repositories
+
+```
+sudo docker run --rm -t \
+  -v $(pwd):/antora:Z \
+  ghcr.io/boozallen/sdp-docs/builder:latest generate --stacktrace --generator booz-allen-site-generator --to-dir docs antora-playbook.yml --git-credentials-path=./.git-credentials
+```

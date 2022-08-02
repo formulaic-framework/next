@@ -1,0 +1,103 @@
+site:
+  title: Formulaic Docs
+  start_page: intro::index.adoc
+
+content:
+  sources:
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      start_paths:
+        - docs/intro
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/fp/*"
+        - "!@formulaic/fp/0.2.*"
+        - "!@formulaic/fp/0.3.*"
+        - "!@formulaic/fp/0.4.*"
+        - "!@formulaic/fp/0.5.0"
+        - "!@formulaic/fp/0.5.1"
+        - "!@formulaic/fp/0.5.2"
+        - "!@formulaic/fp/0.5.3"
+      start_paths:
+        - packages/fp/docs
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/entity-service/*"
+        - "!@formulaic/entity-service/0.*"
+        - "!@formulaic/entity-service/1.0.*"
+        - "!@formulaic/entity-service/1.1.0"
+        - "!@formulaic/entity-service/1.1.1"
+      start_paths:
+        - packages/entity-service/docs
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/hash/*"
+        - "!@formulaic/hash/0.2.0"
+        - "!@formulaic/hash/0.2.1"
+      start_paths:
+        - packages/hash/docs
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/id/*"
+        - "!@formulaic/id/0.2.0"
+        - "!@formulaic/id/0.2.1"
+      start_paths:
+        - packages/id/docs
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/fp-interceptor/*"
+        - "!@formulaic/fp-interceptor/0.2.*"
+        - "!@formulaic/fp-interceptor/0.3.0"
+        - "!@formulaic/fp-interceptor/0.3.1"
+        - "!@formulaic/fp-interceptor/0.3.2"
+        - "!@formulaic/fp-interceptor/0.3.3"
+      start_paths:
+        - packages/fp-interceptor/docs
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/acl/*"
+        - "!@formulaic/acl/1.0.0"
+      start_paths:
+        - packages/acl/docs
+
+    - url: https://github.com/formulaic-framework/formulaic.git
+      branches: docs
+      tags:
+        - "@formulaic/auth-module/*"
+        - "!@formulaic/auth-module/0.2.0"
+        - "!@formulaic/auth-module/0.2.1"
+      start_paths:
+        - packages/auth-module/docs
+
+ui:
+  bundle:
+    url: https://github.com/boozallen/sdp-docs-skin/releases/download/1.1/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./ui
+
+asciidoc:
+  attributes:
+    casl: https://casl.js.org/v5/[CASL]
+    formulaic: https://github.com/formulaic-framework/formulaic[Formulaic]
+    fp: xref:fp::index.adoc[FP]
+    fp-ts: https://gcanti.github.io/fp-ts/[fp-ts]
+    nanoid: https://github.com/ai/nanoid[Nano ID]
+    nest: https://nestjs.com/[Nest]
+    nest-openapi: https://docs.nestjs.com/openapi/introduction
+    react: https://reactjs.org/[React]
+    typeorm-repo: https://typeorm.io/working-with-repository[Repository]
+    vite: https://vitejs.dev/[Vite]
+    yarn: https://yarnpkg.com/[Yarn]
+    yarn-workspaces: https://yarnpkg.com/features/workspaces

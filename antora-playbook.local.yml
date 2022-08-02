@@ -1,0 +1,71 @@
+site:
+  title: Formulaic Docs
+  start_page: intro::index.adoc
+
+content:
+  sources:
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - docs/intro
+
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/fp/docs
+
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/entity-service/docs
+
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/hash/docs
+    
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/id/docs
+    
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/fp-interceptor/docs
+    
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/acl/docs
+    
+    - url: ../formulaic
+      branches: HEAD
+      start_paths:
+        - packages/auth-module/docs
+    
+    # - url: ../example-site-builder
+    #   branches: HEAD
+    #   start_paths:
+    #     - docs
+
+ui:
+  bundle:
+    url: https://github.com/boozallen/sdp-docs-skin/releases/download/1.1/ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./ui
+
+asciidoc:
+  attributes:
+    casl: https://casl.js.org/v5/[CASL]
+    formulaic: https://github.com/formulaic-framework/formulaic[Formulaic]
+    fp: xref:fp::index.adoc[FP]
+    fp-ts: https://gcanti.github.io/fp-ts/[fp-ts]
+    nanoid: https://github.com/ai/nanoid[Nano ID]
+    nest: https://nestjs.com/[Nest]
+    nest-openapi: https://docs.nestjs.com/openapi/introduction
+    react: https://reactjs.org/[React]
+    typeorm-repo: https://typeorm.io/working-with-repository[Repository]
+    vite: https://vitejs.dev/[Vite]
+    yarn: https://yarnpkg.com/[Yarn]
+    yarn-workspaces: https://yarnpkg.com/features/workspaces

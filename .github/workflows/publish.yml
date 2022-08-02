@@ -1,0 +1,21 @@
+name: Publish to GitHub Pages
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 20 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Build docs
+        run: docker run --rm -t -v $(pwd):/antora:Z ghcr.io/boozallen/sdp-docs/builder:latest generate --stacktrace --generator booz-allen-site-generator --to-dir docs antora-playbook.yml
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
