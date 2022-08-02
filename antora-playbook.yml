@@ -2,6 +2,9 @@ site:
   title: Formulaic Docs
   start_page: intro::index.adoc
 
+urls:
+  html_extension_style: indexify
+
 content:
   sources:
     - url: https://github.com/formulaic-framework/formulaic.git
