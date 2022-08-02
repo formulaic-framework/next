@@ -89,14 +89,18 @@ ui:
 
 asciidoc:
   attributes:
+    acl: xref:acl::index.adoc[ACL]
+    bcrypt: https://www.npmjs.com/package/bcrypt[bcrypt]
     casl: https://casl.js.org/v5/[CASL]
     formulaic: https://github.com/formulaic-framework/formulaic[Formulaic]
     fp: xref:fp::index.adoc[FP]
+    fp-interceptor: xref:fp-interceptor::index.adoc[fp-interceptor]
     fp-ts: https://gcanti.github.io/fp-ts/[fp-ts]
     nanoid: https://github.com/ai/nanoid[Nano ID]
     nest: https://nestjs.com/[Nest]
     nest-openapi: https://docs.nestjs.com/openapi/introduction
     react: https://reactjs.org/[React]
+    typeorm: https://typeorm.io/[TypeORM]
     typeorm-repo: https://typeorm.io/working-with-repository[Repository]
     vite: https://vitejs.dev/[Vite]
     yarn: https://yarnpkg.com/[Yarn]
