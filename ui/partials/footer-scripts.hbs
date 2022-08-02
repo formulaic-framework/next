@@ -1,0 +1,14 @@
+<script src="{{uiRootPath}}/js/site.js"></script>
+<script async src="{{uiRootPath}}/../search-index.js"></script>
+<script>
+  const banner = new mdc.banner.MDCBanner(document.querySelector(".mdc-banner"));
+  banner.open();
+  const bannerHeight = 77; //banner.root.offsetHeight;
+
+  const docHeader = document.querySelector(".mdc-top-app-bar");
+  docHeader.style = `top: ${bannerHeight}px;`;
+  const headerHeight = docHeader.offsetHeight;
+
+  const docBody = document.querySelector(".body");
+  docBody.style = `top: ${bannerHeight + headerHeight}px;`;
+</script>
