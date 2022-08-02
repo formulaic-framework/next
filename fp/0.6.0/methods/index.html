@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FP Utility Methods :: Formulaic Docs (Next)</title>
+    <meta name="generator" content="Antora 1.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="https://unpkg.com/@material/banner@14.0.0/dist/mdc.banner.min.css">
+
+    <script src="../../../_/js/vendor/material/material-components-web.min.js"></script>
+
+    <script src="../../../_/js/vendor/highlight/highlight.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/asciidoc.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/groovy.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/javascript.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/bash.min.js"></script>
+    <script src="../../../_/js/vendor/highlight/typescript.min.js"></script>
+
+    <script src="../../../_/js/vendor/tippy/popper.js"></script>
+    <script src="../../../_/js/vendor/tippy/tippy.js"></script>
+
+    <script src="../../../_/js/vendor/clipboardjs/clipboard.min.js"></script>
+  </head>
+  <body class="article">
+    <div class="mdc-banner" role="banner">
+  <div class="mdc-banner__fixed">
+    <div class="mdc-banner__content" role="alertdialog" aria-live="assertive">
+      <div class="mdc-banner__graphic-text-wrapper">
+        <div class="mdc-banner__text">
+          <b>Unreleased Documentation</b> - This documentation reflects features that have not been released.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <img class="toolbar-logo" src="../../../_/img/tabler-icons/math-function.svg" viewBox="20 0 80 100"
+        alt="Icon representing Formulaic">
+      <span class="mdc-top-app-bar__title">Formulaic Docs (Next)</span>
+    </section>
+
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <i class="material-icons mdc-icon-button search" tabindex="0" role="button">
+        search
+      </i>
+    </section>
+  </div>
+
+  <div class="mdc-top-app-bar__row sdp-top-app-bar__search mdc-drawer-app-content hide">
+    <section class="mdc-top-app-bar__section">
+      <i class="material-icons mdc-icon-button search-arrow-back" tabindex="0" role="button" title="Close search">
+        arrow_back
+      </i>
+
+      <div class="mdc-text-field search expanded">
+        <input type="text" id="search-input" class="mdc-text-field__input search" />
+        <label class="mdc-floating-label mdc-floating-label--float-above" for="search-input">
+          Search the docs
+        </label>
+      </div>
+
+      <i class="material-icons mdc-icon-button search-clear-query" role="button" tabindex="0" title="Clear search">
+        close
+      </i>
+    </section>
+  </div>
+</header>
+    <div class="body">
+<div class="toolbar mobileOnly" role="navigation">
+  <button id="toolbar-nav-toggle" class="mdc-icon-button material-icons mdc-icon-button">menu</button>
+  <a href="../../../intro/" class="home-link"></a>
+<span class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../">Data Types (FP)</a></li>
+    <li><a href="./">FP Utility Methods</a></li>
+  </ul>
+</span>
+</div>
+<div class="nav-container"  data-component="fp" data-version="0.6.0">
+  <aside class="nav-container">
+    <div class="panels">
+          <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="intro" class="select-version">
+            <option value="master">
+              master
+            </option>
+        </select>
+      </div>
+        <div data-component="intro" data-version="master" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../intro/">
+              Introduction
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../intro/">Introduction</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../intro/docs/">Reading the Documentation</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="fp" class="select-version">
+            <option value="0.6.0">
+              0.6.0
+            </option>
+        </select>
+      </div>
+        <div data-component="fp" data-version="0.6.0" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../">
+              Data Types (FP)
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../data/">Data (Either)</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer is-current-page" href="./">FP Utility Methods</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../custom/">Creating Custom Data Classes</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="entity-service" class="select-version">
+            <option value="1.1.2">
+              1.1.2
+            </option>
+        </select>
+      </div>
+        <div data-component="entity-service" data-version="1.1.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../entity-service/1.1.2/">
+              Entity Service
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/1.1.2/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../entity-service/1.1.2/usage/">Entity Service Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="hash" class="select-version">
+            <option value="0.2.2">
+              0.2.2
+            </option>
+        </select>
+      </div>
+        <div data-component="hash" data-version="0.2.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../hash/0.2.2/">
+              Hashing Module
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../hash/0.2.2/">Overview</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="id" class="select-version">
+            <option value="0.2.2">
+              0.2.2
+            </option>
+        </select>
+      </div>
+        <div data-component="id" data-version="0.2.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../id/0.2.2/">
+              ID Generation
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/formats/">Supported ID Formats</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/setup/">ID Generator Setup</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../id/0.2.2/usage/">ID Generator Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="fp-interceptor" class="select-version">
+            <option value="0.3.4">
+              0.3.4
+            </option>
+        </select>
+      </div>
+        <div data-component="fp-interceptor" data-version="0.3.4" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../fp-interceptor/0.3.4/">
+              FP Interceptor
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/0.3.4/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/0.3.4/install/">Installation</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../fp-interceptor/0.3.4/usage/">Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="acl" class="select-version">
+            <option value="1.0.1">
+              1.0.1
+            </option>
+        </select>
+      </div>
+        <div data-component="acl" data-version="1.0.1" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../acl/1.0.1/">
+              Authorization (ACL) Utilities
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/">Overview</a>              </div>
+           
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+          
+            <a  class="" href="../../../acl/1.0.1/package/">Creating an ACL Package</a>              </div>
+       
+        <div class="nav-children-panel hide">
+           
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/01-roles/">Define User Roles</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/02-subjects/">Define ACL Subjects</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/03-abilities/">Define Abilities</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../acl/1.0.1/package/04-rules/">Defining Rules/Permissions</a>              </div>
+                  </div>
+              </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+    <div class="nav-trees">
+      <div class="version-box">
+        <select data-component="auth-module" class="select-version">
+            <option value="0.2.2">
+              0.2.2
+            </option>
+        </select>
+      </div>
+        <div data-component="auth-module" data-version="0.2.2" class="">
+          <div class="nav-item is-link">
+              <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
+            <a  class="" href="../../../auth-module/0.2.2/">
+              Authentication Module
+            </a>
+          </div>
+          <div class="nav-children-panel hide">
+             
+   
+     
+       
+   
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/">Overview</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/jwt-structure/">Defining a JWT Structure</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/importing/">Importing the Auth Module</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/basic/">Basic Authentication Usage</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
+            <a  class="spacer" href="../../../auth-module/0.2.2/acl/">Advanced Authorization Usage</a>              </div>
+                    </div>
+        </div>
+    </div>      
+    <div class="clear"></div>
+
+    </div>
+  </aside>
+</div>
+<main>
+<article class="doc">
+        <div class="on-this-page-container desktopOnly">
+    <aside>
+        <div class="toc-header">
+            <span class="toc-title">On this page</span>
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/fp/docs/modules/ROOT/pages/methods.adoc">
+                <div class="mdc-ripple-surface edit-page">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
+                    <span class="mdc-button__label">Edit on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <ul id="toc" class="toc">            
+
+        </ul>
+    </aside>
+</div>
+
+        <div class="contents">
+                <h1 class="page">FP Utility Methods</h1>
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The last page described directly using the <a href="../data/#data-interface" class="page">fields</a> of <code>Data&lt;T&gt;</code> and other <code>FP</code> interfaces
+to interact with their content.</p>
+</div>
+<div class="paragraph">
+<p>However, many times you can use the <code>FP</code> utility methods to better interact with returned data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mapIf"><a class="anchor" href="#mapIf"></a><code>mapIf</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>mapIf</code> allows transforming the data of an <code>FP</code>, operating like the <code>.then</code> method on a Promise.</p>
+</div>
+<div class="paragraph">
+<p>Specify the kind of data you&#8217;re transforming by either providing a class or the value of <code>"kind"</code>,
+and a transformation function.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If the object matches the <code>kind</code> specified</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>and the function returns an <code>FP</code>, the return value will be used</p>
+</li>
+<li>
+<p>and the function returns raw data, the data will be wrapped in <code>Data</code> and returned</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If the object does not match the <code>kind</code>, it will be returned as-is</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">new EntityNotFound&lt;number, "number"&gt;("number")
+  .mapIf(
+    EntityNotFound, <i class="conum" data-value="1"></i><b>(1)</b>
+    notFound =&gt; new UnexpectedError(notFound),
+  );
+// =&gt; UnexpectedError <i class="conum" data-value="2"></i><b>(2)</b>
+
+new Data(10).mapIf(
+  "data", <i class="conum" data-value="3"></i><b>(3)</b>
+  data =&gt; data.data + 10, <i class="conum" data-value="4"></i><b>(4)</b>
+);
+// =&gt; Data&lt;number&gt;
+
+new Data(10).mapIf(EntityNotFound, () =&gt; {
+  throw new Error("This will never match.");
+});
+// =&gt; Data&lt;number&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This example passes a class to match</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Because the class matches, the data is transformed</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Alternatively, you can match by name</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>See <a href="#mapData"><code>mapData</code></a> for a shortcut when mapping <code>Data</code> objects</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mapData"><a class="anchor" href="#mapData"></a><code>mapData</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>mapData</code> is a useful shortcut used when an <code>FP</code> may be a <code>Data</code> instance, and works similar to calling <code>.then</code> on a Promise.</p>
+</div>
+<div class="paragraph">
+<p>The function given to <code>mapData</code> will be provided the contents of the <code>Data</code> object.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If <code>mapData</code> is called on a non-<code>Data</code> object, the object will be returned as-is</p>
+</li>
+<li>
+<p>If the function passed to <code>mapData</code> returns an <code>FP</code> object (has <code>kind</code>), the returned value will be passed as-is</p>
+</li>
+<li>
+<p>If the function returns any other object, it will be wrapped in <code>Data</code></p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">interface User {
+  id: number;
+  username: string;
+}
+
+/** Case 1: mapData does not transform objects that are not Data&lt;T&gt; */
+new AccessForbidden&lt;User, "User"&gt;("User").mapData(x =&gt; {
+  throw new Error("This can never be reached.");
+}); // =&gt; AccessForbidden&lt;User, "User"&gt;
+
+/**
+ * Case 2: an FP&lt;T&gt; object will be returned as-is
+ * (e.g. you can return Data&lt;T&gt; and it won't be wrapped as Data&lt;Data&lt;T&gt;&gt;)
+ */
+new Data&lt;User&gt;({ id: 1234, username: "admin" }).mapData(user =&gt; {
+  if(user.username === "admin") {
+    return new AccessForbidden("User");
+  }
+  return user;
+}); // =&gt; Data&lt;User&gt; | AccessForbidden&lt;User, "User"&gt;
+
+/**
+ * Returning raw data will be wrapped in a new `Data&lt;T&gt;` object.
+ */
+new Data(5).mapData(x =&gt; x + 10) // =&gt; Data&lt;number&gt;.data = 15</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mapDataAsync"><a class="anchor" href="#mapDataAsync"></a><code>mapDataAsync</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>mapDataAsync</code> is like <code>mapData</code>, but uses Promises.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">async function getUser(username: string): Promise&lt;Data&lt;User&gt; | EntityNotFound&lt;User, "User"&gt;&gt; { /* ... */ }
+async function getUserProfile(user: User): Promise&lt;Data&lt;Profile&gt; | MissingPermission&lt;Profile&gt;&gt; { /* ... */ }
+
+async function main() {
+  const user = await getUser("admin");
+  const profile = await user.mapDataAsync(user =&gt; getUserProfile(user));
+  // =&gt; Data&lt;Profile&gt; | MissingPermission&lt;Profile&gt; | EntityNotFound&lt;User, "User"&gt;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+            <div class="nav-buttons">
+        <a class="previous" href="                ../data/"
+        >
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
+            </div>
+             <div class="title">
+                Data (Either)
+            </div>
+        </a>
+        <a class="next" href="                ../custom/"
+        >
+            <div class="title">
+                Creating Custom Data Classes
+            </div>
+            <div class="arrow">
+                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
+            </div>
+        </a>
+</div>        </div>
+</article>
+<div class="footer">
+  <p>© Copyright 2022 Flyyn</p>
+  <p>Built with <a href="https://antora.org">Antora</a> using a <a href="https://github.com/boozallen/sdp-docs-skin">custom UI Bundle</a>.</p>
+</div>
+</main>
+</div>
+    <script src="../../../_/js/site.js"></script>
+<script async src="../../../_/../search-index.js"></script>
+<script>
+  const banner = new mdc.banner.MDCBanner(document.querySelector(".mdc-banner"));
+  banner.open();
+  const bannerHeight = 77; //banner.root.offsetHeight;
+
+  const docHeader = document.querySelector(".mdc-top-app-bar");
+  docHeader.style = `top: ${bannerHeight}px;`;
+  const headerHeight = docHeader.offsetHeight;
+
+  const docBody = document.querySelector(".body");
+  docBody.style = `top: ${bannerHeight + headerHeight}px;`;
+</script>
+  </body>
+</html>
