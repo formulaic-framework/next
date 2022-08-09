@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>ID Generation Module :: Formulaic Docs (Next)</title>
+    <title>Formulaic&#8217;s Data Types (FP) :: Formulaic Docs (Next)</title>
     <meta name="generator" content="Antora 1.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
     <link rel="stylesheet" href="https://unpkg.com/@material/banner@14.0.0/dist/mdc.banner.min.css">
@@ -74,12 +74,12 @@
   <a href="../../intro/" class="home-link"></a>
 <span class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="./">ID Generation</a></li>
+    <li><a href="./">Data Types (FP)</a></li>
     <li><a href="./">Overview</a></li>
   </ul>
 </span>
 </div>
-<div class="nav-container"  data-component="id" data-version="0.2.2">
+<div class="nav-container"  data-component="fp" data-version="1.0.0">
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
@@ -129,7 +129,7 @@
         <div data-component="fp" data-version="1.0.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../../fp/1.0.0/">
+            <a  class=" is-current-page" href="./">
               Data Types (FP)
             </a>
           </div>
@@ -143,31 +143,31 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../fp/1.0.0/">Overview</a>              </div>
+            <a  class="spacer is-current-page" href="./">Overview</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../fp/1.0.0/fp/">FP Interface</a>              </div>
+            <a  class="spacer" href="fp/">FP Interface</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../fp/1.0.0/data/">Data (Either)</a>              </div>
+            <a  class="spacer" href="data/">Data (Either)</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../fp/1.0.0/common/">Common FP Instances</a>              </div>
+            <a  class="spacer" href="common/">Common FP Instances</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../fp/1.0.0/custom/">Creating Custom Data Classes</a>              </div>
+            <a  class="spacer" href="custom/">Creating Custom Data Classes</a>              </div>
                     </div>
         </div>
     </div>      
@@ -249,7 +249,7 @@
         <div data-component="id" data-version="0.2.2" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class=" is-current-page" href="./">
+            <a  class="" href="../../id/0.2.2/">
               ID Generation
             </a>
           </div>
@@ -263,25 +263,25 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer is-current-page" href="./">Overview</a>              </div>
+            <a  class="spacer" href="../../id/0.2.2/">Overview</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="formats/">Supported ID Formats</a>              </div>
+            <a  class="spacer" href="../../id/0.2.2/formats/">Supported ID Formats</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="setup/">ID Generator Setup</a>              </div>
+            <a  class="spacer" href="../../id/0.2.2/setup/">ID Generator Setup</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="usage/">ID Generator Usage</a>              </div>
+            <a  class="spacer" href="../../id/0.2.2/usage/">ID Generator Usage</a>              </div>
                     </div>
         </div>
     </div>      
@@ -459,7 +459,7 @@
     <aside>
         <div class="toc-header">
             <span class="toc-title">On this page</span>
-            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/id/docs/modules/ROOT/pages/index.adoc">
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/fp/docs/modules/ROOT/pages/index.adoc">
                 <div class="mdc-ripple-surface edit-page">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
@@ -474,11 +474,12 @@
 </div>
 
         <div class="contents">
-                <h1 class="page">ID Generation Module</h1>
+                <h1 class="page">Formulaic&#8217;s Data Types (FP)</h1>
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Formulaic provides an ID generation module that easily provides collision-safe random IDs in multiple formats.</p>
+<p>Formulaic&#8217;s Data Types library (called "FP" for short) provides a strongly-typed and chainable
+data format to use as return types.</p>
 </div>
 </div>
 </div>
@@ -486,20 +487,95 @@
 <h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Install with Yarn:</p>
+<p>FP is distributed on NPM as <code>@formulaic/fp</code>, and is also bundled into <code>@formulaic/api</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary"><a class="anchor" href="#_summary"></a>Summary</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_better_visibility_and_typing"><a class="anchor" href="#_better_visibility_and_typing"></a>Better Visibility and Typing</h3>
+<div class="paragraph">
+<p>When it comes to error handling, both <code>Promise</code> and <code>catch</code> in TypeScript hide the type of errors.<br>
+FP takes inspiration from <a href="https://gcanti.github.io/fp-ts/">fp-ts</a> and other <a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a> approaches, and uses a structure
+similar to <code>Either</code> from <a href="https://gcanti.github.io/fp-ts/">fp-ts</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh">yarn add @formulaic/id</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Literal, Empty } from "@formulaic/fp";
+
+function getData(): Literal&lt;number&gt; | Empty&lt;number&gt; {
+  const success: boolean = coinFlip();
+  return success ? new Literal(10) : new Empty();
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chaining"><a class="anchor" href="#_chaining"></a>Chaining</h3>
+<div class="paragraph">
+<p>All FP classes support chaining, similar to the <code>.then</code> method on Promises:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const x = new Literal(10);
+const afterAddition = x.map(i =&gt; i + 10);
+const afterDivision = await afterAddition.chain(async i =&gt; await Promise.resolve(i / 4));
+expect(afterDivision.data).toBe(5);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Calling <code>.then</code> on a rejected Promise does nothing (and keeps the value the same) -
+all chaining methods from <code>FP</code> do the same.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const x = new Empty&lt;number&gt;();
+const afterAddition = x.map(i =&gt; i + 10); // =&gt; still Empty&lt;number&gt;, function is not called</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transformation"><a class="anchor" href="#_transformation"></a>Transformation</h3>
+<div class="paragraph">
+<p>FP objects are easy to configure via {class-transformer}, and even come with some basic transformation rules built-in.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { AccessForbidden, EntityNotFound } from "@formulaic/fp";
+
+@Controller()
+export class SampleController {
+
+  @Get("/secret")
+  public getSecret() {
+    return new AccessForbidden();
+  }
+
+  @Get("/misspelled-pgae")
+  public getUnknownEntity() {
+    return new EntityNotFound();
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you use a <code>class-transformer</code> utility, like Formulaic&#8217;s <a href="../../fp-interceptor/1.0.0/" class="page">fp-interceptor</a>, the two routes in the example above will
+produce the same <code>404</code> response to hide whether a page exists or not if the user doesn&#8217;t have permission thanks to the default <code>class-transformer</code> configuration.</p>
+</div>
+<div class="paragraph">
+<p>However, your backend (and developers, if running the server with <code>NODE_ENV=development</code>) will be able to tell the two cases apart.</p>
 </div>
 </div>
 </div>
 </div>
             <div class="nav-buttons">
-        <a class="next" href="                formats/"
+        <a class="next" href="                fp/"
         >
             <div class="title">
-                Supported ID Formats
+                FP Interface
             </div>
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
