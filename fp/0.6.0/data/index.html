@@ -149,13 +149,19 @@
       <div class="nav-item is-link">
         
           
+            <a  class="spacer" href="../fp/">FP Interface</a>              </div>
+           
+     
+      <div class="nav-item is-link">
+        
+          
             <a  class="spacer is-current-page" href="./">Data (Either)</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../methods/">FP Utility Methods</a>              </div>
+            <a  class="spacer" href="../common/">Common FP Instances</a>              </div>
            
      
       <div class="nav-item is-link">
@@ -472,7 +478,10 @@
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The simplest example of <code>@formulaic/fp</code> will provide the functionality of an <code>Either</code>,
+<p>The previous examples of chaining used two implementations of <code>FP</code>: <code>Literal</code> and <code>Empty</code>.</p>
+</div>
+<div class="paragraph">
+<p>These two classes provide an implementation of <code>Either</code>,
 seen in <a href="https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Either.html">Haskell</a>,
 and JavaScript libraries such as
 <a href="https://gcanti.github.io/fp-ts/modules/Either.ts.html"><code>fp-ts</code></a>,
@@ -480,114 +489,206 @@ and JavaScript libraries such as
 and more.</p>
 </div>
 <div class="paragraph">
-<p><code>@formulaic/fp</code> provides <code>Data&lt;T&gt;</code> and <code>NoData&lt;T&gt;</code>.</p>
-</div>
-<div class="paragraph">
-<p><code>Data</code> is intended to be used directly, but <code>NoData</code> is abstract
-and usually implemented by more detailed classes, like <code>NotFound</code>.</p>
+<p>Implementations of <code>Either</code> provide a clear and unmistakable difference between the presence and absence of data -
+avoiding <a href="https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/">null</a>, <code>undefined</code>,
+and other troublesome ways of representing a lack of data.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="data-interface"><a class="anchor" href="#data-interface"></a><code>Data&lt;T&gt;</code> Interface</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">class Data&lt;T&gt; {
-  public readonly status: 200 | 201;
-  public readonly kind: "Data";
-  public readonly hasData: true;
-  public readonly noValue: false;
-  public readonly data: T;
-
-  public constructor(data: T) {}
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="no-data-interface"><a class="anchor" href="#no-data-interface"></a><code>NoData&lt;T&gt;</code> Interface</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">abstract class NoData&lt;T&gt; extends FP&lt;T&gt; {
-  public readonly hasData: false;
-  public readonly noValue: true;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="not-found-interface"><a class="anchor" href="#not-found-interface"></a><code>NotFound&lt;T, EntityName&gt;</code> Interface</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">class NotFound&lt;T, EntityName extends string&gt; extends NoData&lt;T&gt; {
-  public readonly kind: "NotFound";
-  public readonly permissionError: boolean;
-  public readonly status: 403 | 404;
-  public readonly entityName?: EntityName;
-
-  public constructor(
-    entityName: EntityName,
-    permissionError: boolean,
-  ) {}
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
+<h2 id="properties"><a class="anchor" href="#properties"></a>Properties</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use <code>Data&lt;T&gt;</code> when you may or may not have a return value:</p>
+<p>Before getting too far, it may be best to look at the actual properties of <code>Literal</code> and <code>Empty</code> -
+the type system will save you from the properties on the backend,
+but it may be helpful to see how FP works, and how the objects look after the compiler strips
+out type information.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following definitions include properties defined in inherited classes to provide
+more information that exist in the actual class definitions of <code>Literal</code> and <code>Empty</code>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
+<div class="title">Properties of <code>Literal</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">function getLetterInString(haystack: string, index: number): Data&lt;string&gt; | EntityNotFound&lt;string, "letter"&gt; {
-  if(haystack.length &lt; index) {
-    return new Data(haystack[index]);
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Literal&lt;T&gt; extends Data&lt;T&gt; {
+  kind: "Literal";
+
+  status: 200 | 201;
+
+  hasData: true;
+  hasError: false;
+  noValue: false;
+
+  data: T;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Properties of <code>Empty</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Empty&lt;T = any&gt; extends NoValue&lt;T&gt; {
+  kind: "Empty";
+
+  status: 404;
+
+  hasData: false;
+  hasError: false;
+  noValue: true;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>Using Literal/Empty Values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are (at least) five different ways to evaluate and process values that are returned
+as <code>Literal</code> or <code>Either</code> instances, with reasons why each may be good for certain situations.</p>
+</div>
+<div class="paragraph">
+<p>We will be using the same data for all of the following examples,
+which is a basic example of loading a configuration value.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>Literal</code>/<code>Empty</code> for use in following examples</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { readFileSync } from "fs";
+function loadPortConfig(filename: string = "port.txt"): Literal&lt;number&gt; | Empty&lt;number&gt; {
+  try {
+    const fileContent = readFileSync(filename, "utf8");
+    const num = parseInt(fileContent, 10);
+    if(num &amp;&amp; !isNaN(num)) {
+      return new Literal(num);
+    }
+    return new Empty();
+  } catch (e) {
+    return new Empty();
   }
-  return new EntityNotFound("letter", false);
+}
+
+const portConfig = loadPortConfig();</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-kind"><a class="anchor" href="#usage-kind"></a>Checking 'kind'</h3>
+<div class="paragraph">
+<p>Every <code>FP</code> object is required to include a <code>kind</code> field,
+which can determine if the returned config is a <code>Literal</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example using <code>kind</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">var port: number;
+if(portConfig.kind === "Literal") {
+  console.log(`Listening on port ${portConfig.data}, as-per config.`);
+  port = portConfig.data;
+} else {
+  console.log("No configured port.  Defaulting to '80'.");
+  port = 80;
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="usage-props"><a class="anchor" href="#usage-props"></a>Using Description properties (<code>hasData</code>, etc.)</h3>
 <div class="paragraph">
-<p>You can check <code>hasData</code> to determine the result:</p>
+<p>While <code>kind</code> provides an exact match, every <code>FP</code> also contains three flags
+providing a more general description of an object:
+<code>hasData</code>, <code>hasError</code>, <code>noValue</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is overkill when only <code>Either</code> or <code>Literal</code> could be returned,
+but you could use these flags to filter out errors and empty values:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example filtering by <code>hasError</code>, <code>noValue</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig.hasError) {
+  console.log("Error loading port!");
+} else if(portConfig.noValue) {
+  console.log("No port specified, will use default.");
+} else {
+  console.log(`Port configured as ${portConfig.data}`);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-status"><a class="anchor" href="#usage-status"></a>Using <code>status</code></h3>
+<div class="paragraph">
+<p>All <code>FP</code> objects include a <code>status</code> code, intended to represent HTTP response status codes
+(or process exit codes).</p>
+</div>
+<div class="paragraph">
+<p>One could use these fields similar to the descriptor fields - e.g. responses with <code>status</code> in the range <code>300</code> - <code>500</code> are likely errors, and this could be compared similar to the last example using <code>hasError</code> - although we don&#8217;t see why anyone would prefer this.</p>
+</div>
+<div class="paragraph">
+<p>However, if you are writing general middleware that formats <code>FP</code> objects into HTTP responses,
+you may find <code>status</code> useful.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-util"><a class="anchor" href="#usage-util"></a>Utility Methods</h3>
+<div class="paragraph">
+<p>The above examples used <code>FP</code> properties, but every <code>FP</code> object also includes utility
+methods.</p>
+</div>
+<div class="paragraph">
+<p>The first example used <code>kind</code> to set a default if <code>Empty</code> was found,
+however <a href="../fp/#alt" class="page"><code>altValue()</code></a> could avoid the entire <code>if</code>/<code>else</code> block.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example with <code>altValue</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const port = portConfig.altValue(80);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="usage-instanceof"><a class="anchor" href="#usage-instanceof"></a>Using <code>instanceof</code></h3>
+<div class="paragraph">
+<p>This method is least recommended, but in some environments, <code>instanceof</code> will work
+to determine the class hierarchy used to create the <code>FP</code> object.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">const letter = getLetterInString("Hello World", 2);
-if(letter.hasData) {
-  console.log(`Message contains '${letter.data}'`);
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig instanceof Literal) {
+  console.log("Port was configured!");
 } else {
-  console.log("Could not extract the second letter from the message.");
+  console.log("No port configured, using defaults.");
 }</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>For most cases, there&#8217;s better ways to interact with <code>FP</code> data
-than directly accessing fields, which will be covered next.</p>
 </div>
 </div>
 </div>
             <div class="nav-buttons">
-        <a class="previous" href="                ../"
+        <a class="previous" href="                ../fp/"
         >
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
             </div>
              <div class="title">
-                Overview
+                FP Interface
             </div>
         </a>
-        <a class="next" href="                ../methods/"
+        <a class="next" href="                ../common/"
         >
             <div class="title">
-                FP Utility Methods
+                Common FP Instances
             </div>
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>

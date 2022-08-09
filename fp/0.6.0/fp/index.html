@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Basic Authentication Usage :: Formulaic Docs (Next)</title>
+    <title>Interface of an FP Object :: Formulaic Docs (Next)</title>
     <meta name="generator" content="Antora 1.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="https://unpkg.com/@material/banner@14.0.0/dist/mdc.banner.min.css">
@@ -74,12 +74,12 @@
   <a href="../../../intro/" class="home-link"></a>
 <span class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Authentication Module</a></li>
-    <li><a href="./">Basic Authentication Usage</a></li>
+    <li><a href="../">Data Types (FP)</a></li>
+    <li><a href="./">FP Interface</a></li>
   </ul>
 </span>
 </div>
-<div class="nav-container"  data-component="auth-module" data-version="0.2.2">
+<div class="nav-container"  data-component="fp" data-version="0.6.0">
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
@@ -129,7 +129,7 @@
         <div data-component="fp" data-version="0.6.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../../../fp/0.6.0/">
+            <a  class="" href="../">
               Data Types (FP)
             </a>
           </div>
@@ -143,31 +143,31 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp/0.6.0/">Overview</a>              </div>
+            <a  class="spacer" href="../">Overview</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp/0.6.0/fp/">FP Interface</a>              </div>
+            <a  class="spacer is-current-page" href="./">FP Interface</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp/0.6.0/data/">Data (Either)</a>              </div>
+            <a  class="spacer" href="../data/">Data (Either)</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp/0.6.0/common/">Common FP Instances</a>              </div>
+            <a  class="spacer" href="../common/">Common FP Instances</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp/0.6.0/custom/">Creating Custom Data Classes</a>              </div>
+            <a  class="spacer" href="../custom/">Creating Custom Data Classes</a>              </div>
                     </div>
         </div>
     </div>      
@@ -406,7 +406,7 @@
         <div data-component="auth-module" data-version="0.2.2" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../">
+            <a  class="" href="../../../auth-module/0.2.2/">
               Authentication Module
             </a>
           </div>
@@ -420,31 +420,31 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../">Overview</a>              </div>
+            <a  class="spacer" href="../../../auth-module/0.2.2/">Overview</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../jwt-structure/">Defining a JWT Structure</a>              </div>
+            <a  class="spacer" href="../../../auth-module/0.2.2/jwt-structure/">Defining a JWT Structure</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../importing/">Importing the Auth Module</a>              </div>
+            <a  class="spacer" href="../../../auth-module/0.2.2/importing/">Importing the Auth Module</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer is-current-page" href="./">Basic Authentication Usage</a>              </div>
+            <a  class="spacer" href="../../../auth-module/0.2.2/basic/">Basic Authentication Usage</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../acl/">Advanced Authorization Usage</a>              </div>
+            <a  class="spacer" href="../../../auth-module/0.2.2/acl/">Advanced Authorization Usage</a>              </div>
                     </div>
         </div>
     </div>      
@@ -459,7 +459,7 @@
     <aside>
         <div class="toc-header">
             <span class="toc-title">On this page</span>
-            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/auth-module/docs/modules/ROOT/pages/basic.adoc">
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/fp/docs/modules/ROOT/pages/fp.adoc">
                 <div class="mdc-ripple-surface edit-page">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
@@ -474,97 +474,244 @@
 </div>
 
         <div class="contents">
-                <h1 class="page">Basic Authentication Usage</h1>
+                <h1 class="page">Interface of an FP Object</h1>
             <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The auth module includes some basic decorators for standard role-based authentication control,
-applied via a Nest guard.</p>
-</div>
-<div class="paragraph">
-<p>If you are using <a href="https://casl.js.org/v5/">CASL</a> or another more powerful authorization flow, you may wish to skip this section
-and go directly to more advanced usage.</p>
+<p>All FP types follow an interface defined in the library as an abstract class <code>FP</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_guard_configuration"><a class="anchor" href="#_guard_configuration"></a>Guard Configuration</h2>
+<h2 id="kind"><a class="anchor" href="#kind"></a><code>kind</code></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_require_authentication"><a class="anchor" href="#_require_authentication"></a>Require Authentication</h3>
 <div class="paragraph">
-<p>Users can be required to have (any) valid authentication provided to access a route.</p>
+<p>All FP instances have a property <code>kind</code>, intended as an easily discriminated field to tell one type from another.</p>
 </div>
 <div class="paragraph">
-<p>Annotate with <code>@Private()</code>, or if you set <code>defaultPolicy: "deny"</code>, mark routes that do not require authentication with <code>@Public()</code>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_require_roles"><a class="anchor" href="#_require_roles"></a>Require Roles</h3>
-<div class="paragraph">
-<p>Use <code>@RequireRoles()</code> to require users to have all of the roles listed.</p>
+<p>If you extend an FP instance, you will need to include another property to discriminate between sub-types.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively, use <code>RequireOneOfRole</code> to offer a list of roles that users must have one or more of to access the route.</p>
+<p>This is used for <code>UnexpectedError</code>, which is intended to contain many different error types that developers might like
+to report as a generic "500 Server Error", without revealing details about where the error came from.</p>
+</div>
+<div class="paragraph">
+<p>The various implementations of <code>UnexpectedError</code> all use the kind <code>"UnexpectedError"</code>, and use a <code>code</code> property
+to distinguish between implementations.</p>
+</div>
+<div class="paragraph">
+<p><code>kind</code> is good to narrow instances down to a specific interface,
+but FP also includes 3 files to provide a general description of items,
+which also describes how the chaining methods will operate.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="has-data"><a class="anchor" href="#has-data"></a><code>hasData</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objects can be marked "hasData", intended to signify "successful" responses that include data,
+including data successfully fetched from the database, or a response for the user marking an operation as completed without errors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="has-error"><a class="anchor" href="#has-error"></a><code>hasError</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objects can be marked as "hasError", intended to signify a "failure" is being reported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="no-value"><a class="anchor" href="#no-value"></a><code>noValue</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The final flag is <code>noValue</code>, marking an absence of data without a specific error
+- similar to the empty case of <code>Maybe</code> (a structure in many functional languages/libraries).</p>
+</div>
+<div class="paragraph">
+<p>This is especially useful for some chaining methods - FP supports two classes of "fallback",
+one that replaces any "non-successful" response with the provided value,
+and one that only replaces a lack of value, but doesn&#8217;t change errors.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_note_on_chaining_methods"><a class="anchor" href="#_note_on_chaining_methods"></a>Note on Chaining Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Like Promise methods <code>.then</code> and <code>.catch</code>, FP instances have a set of common methods that allow data to be quickly transformed,
+and operations to be applied only if data exists.</p>
+</div>
+<div class="paragraph">
+<p>Unlike Promises, Formulaic&#8217;s FP library generally does not try to call chaining methods on asynchronous values that have not been resolved yet.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, <code>.catch</code> and <code>.then</code> may be called before the first value resolves.</p>
+</div>
+<div class="listingblock">
+<div class="title">Promise Chaining</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const response = Promise.resolve(10);
+const fallback = response.catch(e =&gt; -1);
+const mapped = fallback.then(i =&gt; i * 2);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However with FP, you should <code>await</code> asynchronous values before calling chaining methods:</p>
+</div>
+<div class="listingblock">
+<div class="title">Awaiting FP values</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">async function getData(): Promise&lt;Literal&lt;number&gt; | EntityNotFound&lt;number&gt;&gt; {
+  return new Literal(10);
+}
+
+const value = await getData();
+const mapped = await value.chain(async i =&gt; Promise.resolve(i + 1));
+const second = await mapped.chain(async i =&gt; Promise.resolve(i * 2));</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h2>
+<h2 id="chain"><a class="anchor" href="#chain"></a><code>chain()</code></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use parameter decorators to fetch various details parsed from authentication.</p>
+<p>FP&#8217;s <code>.chain</code> works similar to Promise&#8217;s <code>.then</code> - it expects an asynchronous transformation to be provided,
+does not call the given function if in an error state,
+and can switch to an error state if the provided transformation produces an error.</p>
 </div>
-<div class="paragraph">
-<p>By default, all parameter decorators return <code>undefined</code> if the user wasn&#8217;t authenticated -
-either annotate with <code>@Private()</code>, or provide an argument <code>true</code> to the decorator.</p>
+<div class="listingblock">
+<div class="title">Performs Transformations</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const url = new Literal("http://example.com/");
+const fetched = await url.chain(async url =&gt; {
+  return await fetch(url);
+});</code></pre>
 </div>
-<div class="paragraph">
-<p>The decorator will throw an error if it was unable to fetch the value in required mode.</p>
 </div>
-<div class="sect2">
-<h3 id="_current_id"><a class="anchor" href="#_current_id"></a>Current ID</h3>
+<div class="listingblock">
+<div class="title">Doesn&#8217;t run unless "successful data"</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const missingUrl = new Empty();
+const fetchMissing = await missingUrl.chain(async url =&gt; {
+  // This code will never run, because 'Empty' isn't "successful data"
+  return new MissingPermission();
+}); // =&gt; Empty&lt;string&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Chaining methods are typed well enough that the transform will be completely ignored if TypeScript knows that there&#8217;s no way <code>missingUrl</code> could be a data type.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Will keep returned FPs as-is (whether data, error, or another type)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const failedFetch = await url.chain(async url =&gt; {
+  return new UnexpectedFailure();
+}); // =&gt; UnexpectedFailure</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Wraps non-FP results in <code>Literal</code> (to allow chaining)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const input = new Literal(10);
+const formatted = input.chain(async num =&gt; {
+  return `Number: ${num}`;
+}); // =&gt; Literal&lt;string&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="map"><a class="anchor" href="#map"></a><code>map()</code></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Use <code>@CurrentUserId()</code> to get the ID of the current user.</p>
+<p>Map works the same as <a href="#chain"><code>chain()</code></a> without using Promises.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">@Controller("test")
-export class TestController {
-
-  @Public()
-  @Get("id")
-  public async currentUser(
-    @CurrentUserId() id: string | undefined,
-  ) {}
-
-  @Private()
-  @Get("id/safe")
-  public async requireCurrentUser(
-    @CurrentUserId(true) id: string,
-  ) {}
-
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const input = new Literal(10);
+const output = input.map(i =&gt; i * 2);</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="or"><a class="anchor" href="#or"></a><code>or()</code>, <code>orValue()</code>, <code>orThen()</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>or()</code> and <code>orValue()</code> take a fallback value that replaces any <a href="#has-error"><code>hasError</code></a> or <a href="#no-value"><code>noValue</code></a>
+FP.</p>
+</div>
+<div class="paragraph">
+<p>You can provide an FP instance, or a non-FP value that will be wrapped in <code>Literal</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const error = new UnexpectedFailure();
+const safe = error.orValue(new Literal(10));
+// =&gt; Literal&lt;number&gt;
+
+const safeCallback = error.or(() =&gt; {
+  return new Empty();
+});
+// =&gt; Empty&lt;unknown&gt;
+
+const empty = new Empty();
+const withDefault = empty.or(10);
+// =&gt; Literal&lt;number&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alt"><a class="anchor" href="#alt"></a><code>alt()</code>, <code>altValue()</code>, <code>altThen()</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>alt</code> functions similar to <code>or</code>, taking in a fallback value (or a function that returns the fallback value).
+However, the fallback value is only used if <a href="#no-value"><code>noValue</code></a>.</p>
+</div>
+<div class="paragraph">
+<p>This prevents hiding errors, while still allowing defaults.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const dbTable = new EntityService&lt;User&gt;(/* ... */);
+
+const existingUser = await dbTable.findOne({ username: "admin" });
+// =&gt; Literal&lt;User&gt; | EntityNotFound&lt;User&gt; | DatabaseException&lt;User, "findOne"&gt;
+
+const user = await existingUser.altThen(() =&gt; {
+  const user = new User();
+  user.username = "admin";
+  return dbTable.save(user);
+});
+// =&gt; Literal&lt;User&gt; | DatabaseException&lt;User, "findOne"&gt; | DatabaseException&lt;User, "save"&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
             <div class="nav-buttons">
-        <a class="previous" href="                ../importing/"
+        <a class="previous" href="                ../"
         >
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
             </div>
              <div class="title">
-                Importing the Auth Module
+                Overview
             </div>
         </a>
-        <a class="next" href="                ../acl/"
+        <a class="next" href="                ../data/"
         >
             <div class="title">
-                Advanced Authorization Usage
+                Data (Either)
             </div>
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
