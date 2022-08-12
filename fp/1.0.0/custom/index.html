@@ -491,7 +491,7 @@ import { Expose } from "class-transformer";
 import { Equals, IsIn, IsJWT, IsString } from "class-validator";
 import { DataFP } from "./DataFP";
 
-export class LoginResponse extends DataFP {
+export class LoginResponse extends DataFP&lt;"LoginResponse", 200 | 201&gt; {
   public static readonly kind = "LoginResponse"; <i class="conum" data-value="1"></i><b>(1)</b>
 
   @ApiProperty() <i class="conum" data-value="2"></i><b>(2)</b>
