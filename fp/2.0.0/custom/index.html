@@ -3,7 +3,7 @@
   <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Data (Either) :: Formulaic Docs (Next)</title>
+    <title>Creating Custom Data Classes :: Formulaic Docs (Next)</title>
     <meta name="generator" content="Antora 1.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="https://unpkg.com/@material/banner@14.0.0/dist/mdc.banner.min.css">
@@ -75,11 +75,11 @@
 <span class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../">Data Types (FP)</a></li>
-    <li><a href="./">Data (Either)</a></li>
+    <li><a href="./">Creating Custom Data Classes</a></li>
   </ul>
 </span>
 </div>
-<div class="nav-container"  data-component="fp" data-version="1.0.0">
+<div class="nav-container"  data-component="fp" data-version="2.0.0">
   <aside class="nav-container">
     <div class="panels">
           <div class="nav-trees">
@@ -121,12 +121,12 @@
     <div class="nav-trees">
       <div class="version-box">
         <select data-component="fp" class="select-version">
-            <option value="1.0.0">
-              1.0.0
+            <option value="2.0.0">
+              2.0.0
             </option>
         </select>
       </div>
-        <div data-component="fp" data-version="1.0.0" class="">
+        <div data-component="fp" data-version="2.0.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
             <a  class="" href="../">
@@ -155,7 +155,7 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer is-current-page" href="./">Data (Either)</a>              </div>
+            <a  class="spacer" href="../data/">Data (Either)</a>              </div>
            
      
       <div class="nav-item is-link">
@@ -167,7 +167,7 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../custom/">Creating Custom Data Classes</a>              </div>
+            <a  class="spacer is-current-page" href="./">Creating Custom Data Classes</a>              </div>
                     </div>
         </div>
     </div>      
@@ -175,15 +175,15 @@
     <div class="nav-trees">
       <div class="version-box">
         <select data-component="entity-service" class="select-version">
-            <option value="2.0.0">
-              2.0.0
+            <option value="3.0.0">
+              3.0.0
             </option>
         </select>
       </div>
-        <div data-component="entity-service" data-version="2.0.0" class="">
+        <div data-component="entity-service" data-version="3.0.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../../../entity-service/2.0.0/">
+            <a  class="" href="../../../entity-service/3.0.0/">
               Entity Service
             </a>
           </div>
@@ -197,13 +197,13 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../entity-service/2.0.0/">Overview</a>              </div>
+            <a  class="spacer" href="../../../entity-service/3.0.0/">Overview</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../entity-service/2.0.0/usage/">Entity Service Usage</a>              </div>
+            <a  class="spacer" href="../../../entity-service/3.0.0/usage/">Entity Service Usage</a>              </div>
                     </div>
         </div>
     </div>      
@@ -289,15 +289,15 @@
     <div class="nav-trees">
       <div class="version-box">
         <select data-component="fp-interceptor" class="select-version">
-            <option value="1.0.0">
-              1.0.0
+            <option value="2.0.0">
+              2.0.0
             </option>
         </select>
       </div>
-        <div data-component="fp-interceptor" data-version="1.0.0" class="">
+        <div data-component="fp-interceptor" data-version="2.0.0" class="">
           <div class="nav-item is-link">
               <i class="material-icons show-more" aria-hidden="true">chevron_right</i>
-            <a  class="" href="../../../fp-interceptor/1.0.0/">
+            <a  class="" href="../../../fp-interceptor/2.0.0/">
               FP Interceptor
             </a>
           </div>
@@ -311,19 +311,19 @@
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp-interceptor/1.0.0/">Overview</a>              </div>
+            <a  class="spacer" href="../../../fp-interceptor/2.0.0/">Overview</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp-interceptor/1.0.0/install/">Installation</a>              </div>
+            <a  class="spacer" href="../../../fp-interceptor/2.0.0/install/">Installation</a>              </div>
            
      
       <div class="nav-item is-link">
         
           
-            <a  class="spacer" href="../../../fp-interceptor/1.0.0/usage/">Usage</a>              </div>
+            <a  class="spacer" href="../../../fp-interceptor/2.0.0/usage/">Usage</a>              </div>
                     </div>
         </div>
     </div>      
@@ -459,7 +459,7 @@
     <aside>
         <div class="toc-header">
             <span class="toc-title">On this page</span>
-            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/fp/docs/modules/ROOT/pages/data.adoc">
+            <a class="edit-page" href="https://github.com/formulaic-framework/formulaic/edit/main/packages/fp/docs/modules/ROOT/pages/custom.adoc">
                 <div class="mdc-ripple-surface edit-page">
                     <div class="mdc-button__ripple"></div>
                     <i class="material-icons-outlined mdc-button__icon" aria-hidden="true">edit</i>
@@ -474,224 +474,120 @@
 </div>
 
         <div class="contents">
-                <h1 class="page">Data (Either)</h1>
-            <div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>The previous examples of chaining used two implementations of <code>FP</code>: <code>Literal</code> and <code>Empty</code>.</p>
+                <h1 class="page">Creating Custom Data Classes</h1>
+            <div class="paragraph">
+<p>You can <a href="../common/#literal" class="page">use FP&#8217;s <code>Literal</code> class</a> for successful data,
+but has many limitations.</p>
 </div>
 <div class="paragraph">
-<p>These two classes provide an implementation of <code>Either</code>,
-seen in <a href="https://hackage.haskell.org/package/base-4.16.3.0/docs/Data-Either.html">Haskell</a>,
-and JavaScript libraries such as
-<a href="https://gcanti.github.io/fp-ts/modules/Either.ts.html"><code>fp-ts</code></a>,
-<a href="https://folktale.origamitower.com/api/v2.3.0/en/folktale.result.html">Folktale</a>,
-and more.</p>
+<p>To go beyond the default <code>Literal</code> class, you can define a custom class that extends
+<code>DataFP</code> (an abstract class from FP).</p>
 </div>
-<div class="paragraph">
-<p>Implementations of <code>Either</code> provide a clear and unmistakable difference between the presence and absence of data -
-avoiding <a href="https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/">null</a>, <code>undefined</code>,
-and other troublesome ways of representing a lack of data.</p>
+<div class="listingblock">
+<div class="title">Example class created by extending <code>DataFP</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { ApiProperty } from "@nestjs/swagger";
+import { Expose } from "class-transformer";
+import { Equals, IsIn, IsJWT, IsString } from "class-validator";
+import { DataFP } from "./DataFP";
+
+export class LoginResponse extends DataFP&lt;"LoginResponse", 200 | 201&gt; {
+  public static readonly kind = "LoginResponse"; <i class="conum" data-value="1"></i><b>(1)</b>
+
+  @ApiProperty() <i class="conum" data-value="2"></i><b>(2)</b>
+  @Equals("LoginResponse")
+  @Expose()
+  public override readonly kind: "LoginResponse"; <i class="conum" data-value="3"></i><b>(3)</b>
+
+  @ApiProperty()
+  @IsIn([200, 201])
+  @Expose()
+  public override readonly status: 200 | 201; <i class="conum" data-value="3"></i><b>(3)</b>
+
+  @ApiProperty()
+  @IsString()
+  @Expose()
+  public readonly id: string; <i class="conum" data-value="4"></i><b>(4)</b>
+
+  @ApiProperty()
+  @IsJWT()
+  @Expose()
+  public readonly jwt: string; <i class="conum" data-value="4"></i><b>(4)</b>
+
+  public constructor(
+    id: string,
+    jwt: string,
+    newRegistration: boolean = false,
+  ) {
+    super();
+    this.kind = "LoginResponse";
+    this.status = newRegistration ? 201 : 200;
+    this.id = id;
+    this.jwt = jwt;
+  }
+}</code></pre>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="properties"><a class="anchor" href="#properties"></a>Properties</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before getting too far, it may be best to look at the actual properties of <code>Literal</code> and <code>Empty</code> -
-the type system will save you from the properties on the backend,
-but it may be helpful to see how FP works, and how the objects look after the compiler strips
-out type information.</p>
-</div>
-<div class="admonitionblock note">
+<div class="colist arabic">
 <table>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The following definitions include properties defined in inherited classes to provide
-more information that exist in the actual class definitions of <code>Literal</code> and <code>Empty</code>.</p>
-</div>
-</td>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Defining a static <code>kind</code> property is used in some utilities, but is not required.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>DataFP</code> does not attach <code>ApiProperty</code>, <code>Expose</code>, or any validation decorators (unlike other <code>FP</code> classes) - if using OpenAPI or <a href="../../../fp-interceptor/2.0.0/" class="page">fp-interceptor</a> you should declare <code>ApiProperty</code> and <code>Expose</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>You must define <code>kind</code> and <code>status</code> fields.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>You may define any additional fields to represent your data, such as <code>id</code> and <code>jwt</code>.</td>
 </tr>
 </table>
 </div>
-<div class="listingblock">
-<div class="title">Properties of <code>Literal</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Literal&lt;T&gt; extends Data&lt;T&gt; {
-  kind: "Literal";
-
-  status: 200 | 201;
-
-  hasData: true;
-  hasError: false;
-  noValue: false;
-
-  data: T;
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Properties of <code>Empty</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">class Empty&lt;T = any&gt; extends NoValue&lt;T&gt; {
-  kind: "Empty";
-
-  status: 404;
-
-  hasData: false;
-  hasError: false;
-  noValue: true;
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="usage"><a class="anchor" href="#usage"></a>Using Literal/Empty Values</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>There are (at least) five different ways to evaluate and process values that are returned
-as <code>Literal</code> or <code>Either</code> instances, with reasons why each may be good for certain situations.</p>
+<p>Now the properties are exposed directly in the returned object,
+no need to go through <code>data</code>:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example usage of custom class extending <code>DataFP</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const response = new LoginResponse("admin", "[jwt contents]");
+expect(response.id).toBe("admin");</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>We will be using the same data for all of the following examples,
-which is a basic example of loading a configuration value.</p>
+<p>If an error might be returned, you can check that the value is a <code>LoginResponse</code> before
+accessing fields, or use a transformation like <code>map</code> or <code>chain</code>.</p>
 </div>
 <div class="listingblock">
-<div class="title">Example <code>Literal</code>/<code>Empty</code> for use in following examples</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { readFileSync } from "fs";
-function loadPortConfig(filename: string = "port.txt"): Literal&lt;number&gt; | Empty&lt;number&gt; {
-  try {
-    const fileContent = readFileSync(filename, "utf8");
-    const num = parseInt(fileContent, 10);
-    if(num &amp;&amp; !isNaN(num)) {
-      return new Literal(num);
-    }
-    return new Empty();
-  } catch (e) {
-    return new Empty();
-  }
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">async function performLogin(
+  username: string,
+  password: string,
+): Promise&lt;LoginResponse | UnexpectedError&lt;LoginResponse&gt;&gt; {
+  return response;
 }
 
-const portConfig = loadPortConfig();</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage-kind"><a class="anchor" href="#usage-kind"></a>Checking 'kind'</h3>
-<div class="paragraph">
-<p>Every <code>FP</code> object is required to include a <code>kind</code> field,
-which can determine if the returned config is a <code>Literal</code>.</p>
-</div>
-<div class="listingblock">
-<div class="title">Example using <code>kind</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">var port: number;
-if(portConfig.kind === "Literal") {
-  console.log(`Listening on port ${portConfig.data}, as-per config.`);
-  port = portConfig.data;
+const login = await performLogin("admin", "top-secret-password");
+if(login.hasData) {
+  console.log(`Success!  JWT: ${login.jwt}`);
 } else {
-  console.log("No configured port.  Defaulting to '80'.");
-  port = 80;
+  console.log("Failed login.");
 }</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage-props"><a class="anchor" href="#usage-props"></a>Using Description properties (<code>hasData</code>, etc.)</h3>
-<div class="paragraph">
-<p>While <code>kind</code> provides an exact match, every <code>FP</code> also contains three flags
-providing a more general description of an object:
-<code>hasData</code>, <code>hasError</code>, <code>noValue</code>.</p>
-</div>
-<div class="paragraph">
-<p>This is overkill when only <code>Either</code> or <code>Literal</code> could be returned,
-but you could use these flags to filter out errors and empty values:</p>
-</div>
-<div class="listingblock">
-<div class="title">Example filtering by <code>hasError</code>, <code>noValue</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig.hasError) {
-  console.log("Error loading port!");
-} else if(portConfig.noValue) {
-  console.log("No port specified, will use default.");
-} else {
-  console.log(`Port configured as ${portConfig.data}`);
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage-status"><a class="anchor" href="#usage-status"></a>Using <code>status</code></h3>
-<div class="paragraph">
-<p>All <code>FP</code> objects include a <code>status</code> code, intended to represent HTTP response status codes
-(or process exit codes).</p>
-</div>
-<div class="paragraph">
-<p>One could use these fields similar to the descriptor fields - e.g. responses with <code>status</code> in the range <code>300</code> - <code>500</code> are likely errors, and this could be compared similar to the last example using <code>hasError</code> - although we don&#8217;t see why anyone would prefer this.</p>
-</div>
-<div class="paragraph">
-<p>However, if you are writing general middleware that formats <code>FP</code> objects into HTTP responses,
-you may find <code>status</code> useful.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage-util"><a class="anchor" href="#usage-util"></a>Utility Methods</h3>
-<div class="paragraph">
-<p>The above examples used <code>FP</code> properties, but every <code>FP</code> object also includes utility
-methods.</p>
-</div>
-<div class="paragraph">
-<p>The first example used <code>kind</code> to set a default if <code>Empty</code> was found,
-however <a href="../fp/#alt" class="page"><code>altValue()</code></a> could avoid the entire <code>if</code>/<code>else</code> block.</p>
-</div>
-<div class="listingblock">
-<div class="title">Example with <code>altValue</code></div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">const port = portConfig.altValue(80);</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="usage-instanceof"><a class="anchor" href="#usage-instanceof"></a>Using <code>instanceof</code></h3>
-<div class="paragraph">
-<p>This method is least recommended, but in some environments, <code>instanceof</code> will work
-to determine the class hierarchy used to create the <code>FP</code> object.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">if(portConfig instanceof Literal) {
-  console.log("Port was configured!");
-} else {
-  console.log("No port configured, using defaults.");
-}</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
             <div class="nav-buttons">
-        <a class="previous" href="                ../fp/"
+        <a class="previous" href="                ../common/"
         >
             <div class="arrow">
                 <i class="material-icons show-more" aria-hidden="true">arrow_back</i>
             </div>
              <div class="title">
-                FP Interface
-            </div>
-        </a>
-        <a class="next" href="                ../common/"
-        >
-            <div class="title">
                 Common FP Instances
-            </div>
-            <div class="arrow">
-                <i class="material-icons show-more" aria-hidden="true">arrow_forward</i>
             </div>
         </a>
 </div>        </div>
